@@ -1,6 +1,7 @@
 @import './base.css';
 @import './header.css';
 @import './table.scss';
+@import './loader.css';
 
 * {
   box-sizing: border-box;

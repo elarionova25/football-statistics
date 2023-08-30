@@ -10,7 +10,10 @@
                 </div>
                 <div class="header__item"><p id="total" class="filter__link filter__link--number">Сайт</p></div>
             </div>
-            <div class="table-content">
+            <div v-if="isLoading">
+                <div class="loader"></div>
+            </div>
+            <div class="table-content" v-else>
                 <div class="table-row"
                      v-for="(team, key) in teams.teams"
                      :key="key"
@@ -44,14 +47,18 @@ export default {
     name: 'TeamsTable',
     setup() {
         let teams = ref({});
+        let isLoading = ref(false);
         onMounted(async () => {
             await fetchData();
         });
         const fetchData = async () => {
+            isLoading.value = true;
             teams.value = await FootballData.teams();
+            isLoading.value = false;
         };
         return {
             teams,
+            isLoading,
         }
     }
 }
