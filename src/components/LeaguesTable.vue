@@ -17,8 +17,8 @@
             <div class="table-content" v-else>
                 <router-link
                     v-for="(competition, key) in leagues.competitions"
-                    :key="key"
-                    :to="`/leagues/${competition.id}`"
+                    :key="competition.id"
+                    :to="`/league/${competition.id}`"
                     tag="div"
                 >
                     <div class="table-row">
