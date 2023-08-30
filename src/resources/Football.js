@@ -5,11 +5,6 @@ class FootballData {
         const {data} = await axios.get(`api/v4/competitions`, this.config);
         return data;
     }
-
-    static async leagues() {
-        const {data} = await axios.get(`api/v4/competitions/CL/matches`, this.config);
-        return data;
-    }
 }
 FootballData.token = '6783c28aa01c46119c51f90e43534c03'
 FootballData.config = {

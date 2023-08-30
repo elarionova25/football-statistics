@@ -4,7 +4,7 @@ ul,li {
 }
 
 .nav_wrap {
-    background-color: #E5F0F8;
+    background-color: #8f8f8f;
 }
 
 .nav_lists {
@@ -15,13 +15,12 @@ ul,li {
 .nav_list {
     width: 20%;
     height: 60px;
-    background-color: #E5F0F8;
+    background-color: #8f8f8f;
     position: relative;
-    transition: all .3s;
 }
 
 .nav_list:hover {
-    background-color: #0071BB;
+    border-bottom: 5px solid #00ffe1;
 }
 
 .nav_list:first-child {
@@ -38,8 +37,8 @@ ul,li {
     align-items: center;
     width: 100%;
     height: 100%;
-    color: #1b4059;
-    font-size: 15px;
+    color: #ffffff;
+    font-size: 20px;
     letter-spacing: 0.05em;
     font-weight: 600;
     transition: all .3s;
