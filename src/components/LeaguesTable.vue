@@ -31,11 +31,22 @@
 </template>
 
 <script>
+import {onMounted, ref} from "vue";
+import FootballData from "@/resources/Football";
+
 export default {
     name: 'LeaguesTable',
-    props: ['leagues'],
-    setup(props) {
-
+    setup() {
+        let leagues = ref({});
+        onMounted(async () => {
+            await fetchData();
+        });
+        const fetchData = async () => {
+            leagues.value = await FootballData.competitions();
+        };
+        return {
+            leagues,
+        }
     }
 }
 </script>
