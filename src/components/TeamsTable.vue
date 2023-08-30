@@ -14,26 +14,30 @@
                 <div class="loader"></div>
             </div>
             <div class="table-content" v-else>
-                <div class="table-row"
-                     v-for="(team, key) in teams.teams"
-                     :key="key"
+                <router-link
+                    v-for="(team, key) in teams.teams"
+                    :key="key"
+                    :to="`/teams/${team.id}`"
+                    tag="div"
                 >
-                    <div class="table-name">
-                        <img
+                    <div class="table-row">
+                        <div class="table-name">
+                            <img
                                 :src="team.crest"
                                 class="table-image"
-                        />
-                        <h3>{{ team.name }}</h3>
+                            />
+                            <h3>{{ team.name }}</h3>
+                        </div>
+                        <div class="table-data"> {{ team.founded }}</div>
+                        <div class="table-data"> {{ team.tla }}</div>
+                        <div class="table-data"> {{ team.venue }}</div>
+                        <div class="table-data">
+                            <a :href='team.website' target="_blank">
+                                Открыть
+                            </a>
+                        </div>
                     </div>
-                    <div class="table-data"> {{ team.founded }}</div>
-                    <div class="table-data"> {{ team.tla }}</div>
-                    <div class="table-data"> {{ team.venue }}</div>
-                    <div class="table-data">
-                        <a :href='team.website' target="_blank">
-                            Открыть
-                        </a>
-                    </div>
-                </div>
+                </router-link>
             </div>
         </div>
     </div>

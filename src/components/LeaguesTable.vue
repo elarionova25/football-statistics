@@ -15,22 +15,26 @@
                 <div class="loader"></div>
             </div>
             <div class="table-content" v-else>
-                <div class="table-row"
-                     v-for="(competition, key) in leagues.competitions"
-                     :key="key"
+                <router-link
+                    v-for="(competition, key) in leagues.competitions"
+                    :key="key"
+                    :to="`/leagues/${competition.id}`"
+                    tag="div"
                 >
-                    <div class="table-name">
-                        <img
+                    <div class="table-row">
+                        <div class="table-name">
+                            <img
                                 :src="competition.emblem"
                                 class="table-image"
-                        />
-                        <h3>{{ competition.name }}</h3>
+                            />
+                            <h3>{{ competition.name }}</h3>
+                        </div>
+                        <div class="table-data"> {{ competition.numberOfAvailableSeasons }}</div>
+                        <div class="table-data"> {{ competition.area.name }}</div>
+                        <div class="table-data"> {{ competition.code }}</div>
+                        <div class="table-data"> {{ competition.type }}</div>
                     </div>
-                    <div class="table-data"> {{ competition.numberOfAvailableSeasons }}</div>
-                    <div class="table-data"> {{ competition.area.name }}</div>
-                    <div class="table-data"> {{ competition.code }}</div>
-                    <div class="table-data"> {{ competition.type }}</div>
-                </div>
+                </router-link>
             </div>
         </div>
     </div>

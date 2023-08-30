@@ -7,7 +7,7 @@
                 </a>
             </li>
             <li class="nav_list">
-                <a href="/commands">
+                <a href="/teams">
                     Команды
                 </a>
             </li>
