@@ -30,7 +30,7 @@
                     <div class="table-data"> {{ team.venue }}</div>
                     <div class="table-data">
                         <a :href='team.website' target="_blank">
-                            Ссылка
+                            Открыть
                         </a>
                     </div>
                 </div>
